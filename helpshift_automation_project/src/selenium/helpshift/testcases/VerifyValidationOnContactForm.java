@@ -106,7 +106,11 @@ public class VerifyValidationOnContactForm {
 				// Click on Contact us button on the main page
 				mainPageObj.getcontactUsButton().click();
 				ResultsLogger.logInfo("Contact us button was clicked");
-
+                 
+				contactusFormObj.getContactNameTextBox().clear();
+				contactusFormObj.getContactEmailTextBox().clear();
+				contactusFormObj.getContactIssueDetailsTextArea().clear();
+				
 				// Click on Submit button
 				contactusFormObj.getContactSubmitbutton().click();
 				ResultsLogger
@@ -114,7 +118,7 @@ public class VerifyValidationOnContactForm {
 
 				// Checked the required field message is displayed for email and
 				// issue details
-				if ((contactusFormObj.getValidationMsgcontactEmailTextBox()
+				if ((contactusFormObj.getRequiredMsgcontactEmailTextBox()
 						.getText())
 						.equalsIgnoreCase("Email is a required field")) {
 					testStepStatus.add(true);
@@ -124,7 +128,7 @@ public class VerifyValidationOnContactForm {
 					ResultsLogger
 							.logFail("Email is a required field - message is not displayed");
 
-				if ((contactusFormObj.getValidationMsgcontactIssueTextArea()
+				if ((contactusFormObj.getRequiredMsgcontactIssueTextArea()
 						.getText())
 						.equalsIgnoreCase("Problem description is a required field")) {
 					testStepStatus.add(true);
@@ -152,7 +156,7 @@ public class VerifyValidationOnContactForm {
 				contactusFormObj.getContactSubmitbutton().click();
 				ResultsLogger.logInfo("Submit button was clicked");
 
-				if ((contactusFormObj.getValidationMsgcontactEmailTextBox()
+				if ((contactusFormObj.getRequiredMsgcontactEmailTextBox()
 						.getText())
 						.equalsIgnoreCase("Email is a required field")) {
 					testStepStatus.add(true);
@@ -192,8 +196,7 @@ public class VerifyValidationOnContactForm {
 				ResultsLogger
 						.logInfo("TESTCASE - Enter valid email address and submit the form. It should be submitted successfully.");
 				contactusFormObj.getContactEmailTextBox().clear();
-				contactusFormObj.getContactEmailTextBox().sendKeys(
-						"validEmailTestString");
+				contactusFormObj.getContactEmailTextBox().sendKeys(validEmailTestString);
 				ResultsLogger.logInfo("Email text box set to - "
 						+ validEmailTestString);
 				contactusFormObj.getContactSubmitbutton().click();

@@ -35,7 +35,7 @@ public class DriverScript {
 			if (rowData != null) {
 				ResultsLogger.logInfo("List of test cases successfully retrieved from TestSuite file-"+testCaseSuiteFile);
 				for (String row : rowData) {
-					if (!row.startsWith("#")) {
+					if (!(row.startsWith("#") || row.isEmpty())) {
 						values = row.split(",");
 						// check testcase value is not empty or null
 						if (values[0].isEmpty() || values[0] == null)

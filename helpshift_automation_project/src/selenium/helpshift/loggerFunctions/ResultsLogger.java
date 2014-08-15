@@ -32,7 +32,7 @@ public class ResultsLogger {
 	 * @param message
 	 */
 	public static void logInfo(String message) {
-		writeLogText("INFO", message, "Step completed");
+		writeLogText("INFO", message, "Step Completed");
 	}
 
 	/**
@@ -41,15 +41,15 @@ public class ResultsLogger {
 	 * @param message
 	 */
 	public static void logError(String message) {
-		writeLogText("ERROR", message, "Error encountered");
+		writeLogText("ERROR", message, "Error Encountered");
 	}
 
 	public static void logPass(String message) {
-		writeLogText("STATUS", message, "Step passed");
+		writeLogText("STATUS", message, "Step Passed");
 	}
 
 	public static void logFail(String message) {
-		writeLogText("STATUS", message, "Step failed");
+		writeLogText("STATUS", message, "Step Failed");
 	}
 
 	/**
@@ -112,6 +112,9 @@ public class ResultsLogger {
 			testcaseExectionStatus = "Failed";
 
 		try {
+			resultsHtmlFilename = testCase + "_" + browser + "_"
+			+ System.currentTimeMillis()+"_" +testcaseExectionStatus+ ".html";
+			
 			// Creating a new FileWriter object with the file location
 
 			fWriter = new FileWriter(AutoConfigs.resultsFolder + "/"

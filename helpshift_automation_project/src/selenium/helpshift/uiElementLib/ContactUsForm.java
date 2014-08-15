@@ -28,8 +28,9 @@ public class ContactUsForm {
 	private WebElement contactEmailTextBox = null;
 	private WebElement contactIssueDetailsTextArea = null;
 	private WebElement contactSubmitbutton = null;
+	private WebElement requiredMsgcontactEmailTextBox = null;
+	private WebElement requiredMsgcontactIssueTextArea = null;
 	private WebElement validationMsgcontactEmailTextBox = null;
-	private WebElement validationMsgcontactIssueTextArea = null;
 
 	private WebElement contactUsFormCloseIcon = null;
 	private WebElement contactNameLabel = null;
@@ -159,12 +160,38 @@ public class ContactUsForm {
 			if (debugEnabled)
 				ResultsLogger
 						.logDebug("ContactSubmitbutton found using locator "
-								+ ByClassName + " = "
+								+ ByClassName
+								+ " = "
 								+ ElementIdentifiers.contactSubmitButtonClassName);
 		} else
 			ResultsLogger.logError("ContactSubmitbutton was not found.");
 
 		return contactSubmitbutton;
+	}
+
+	/**
+	 * Finds and returns the element for the required message for the Email text
+	 * box on the Contact us form.
+	 * 
+	 * @return the requiredMsgcontactEmailTextBox
+	 */
+	public WebElement getRequiredMsgcontactEmailTextBox() {
+		requiredMsgcontactEmailTextBox = uiObj.searchElementInParentElement(
+				getContactForm(), ByXpath,
+				ElementIdentifiers.requiredMsgContactEmailXpath);
+		if (requiredMsgcontactEmailTextBox != null) {
+			ResultsLogger.logInfo("requiredMsgcontactEmailTextBox was found.");
+			if (debugEnabled)
+				ResultsLogger
+						.logDebug("requiredMsgcontactEmailTextBox found using locator "
+								+ ByXpath
+								+ " = "
+								+ ElementIdentifiers.requiredMsgContactEmailXpath);
+		} else
+			ResultsLogger
+					.logError("requiredMsgcontactEmailTextBox was not found.");
+
+		return requiredMsgcontactEmailTextBox;
 	}
 
 	/**
@@ -194,29 +221,28 @@ public class ContactUsForm {
 	}
 
 	/**
-	 * Finds and returns the element for the validation message for the Contact
+	 * Finds and returns the element for the required message for the Contact
 	 * issue text area on the Contact us form.
 	 * 
-	 * @return the validationMsgcontactIssueTextArea
+	 * @return the requiredMsgcontactIssueTextArea
 	 */
-	public WebElement getValidationMsgcontactIssueTextArea() {
-		validationMsgcontactIssueTextArea = uiObj.searchElementInParentElement(
+	public WebElement getRequiredMsgcontactIssueTextArea() {
+		requiredMsgcontactIssueTextArea = uiObj.searchElementInParentElement(
 				getContactForm(), ByXpath,
-				ElementIdentifiers.validationMsgContactIssueDetailsXpath);
-		if (validationMsgcontactIssueTextArea != null) {
-			ResultsLogger
-					.logInfo("validationMsgcontactIssueTextArea was found.");
+				ElementIdentifiers.requiredMsgContactIssueDetailsXpath);
+		if (requiredMsgcontactIssueTextArea != null) {
+			ResultsLogger.logInfo("requiredMsgcontactIssueTextArea was found.");
 			if (debugEnabled)
 				ResultsLogger
-						.logDebug("validationMsgcontactIssueTextArea found using locator "
+						.logDebug("requiredMsgcontactIssueTextArea found using locator "
 								+ ByXpath
 								+ " = "
-								+ ElementIdentifiers.validationMsgContactIssueDetailsXpath);
+								+ ElementIdentifiers.requiredMsgContactIssueDetailsXpath);
 		} else
 			ResultsLogger
-					.logError("validationMsgcontactIssueTextArea was not found.");
+					.logError("requiredMsgcontactIssueTextArea was not found.");
 
-		return validationMsgcontactIssueTextArea;
+		return requiredMsgcontactIssueTextArea;
 	}
 
 	/**

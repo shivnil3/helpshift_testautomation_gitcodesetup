@@ -25,8 +25,9 @@ public class ElementIdentifiers {
 	public static String contactSubmitButtonClassName = null;
 	public static String contactUsButtonId = null;
 	public static String contactusMsgXpath = null;
-	public static String validationMsgContactEmailXpath = null;
-	public static String validationMsgContactIssueDetailsXpath = null;
+	public static String requiredMsgContactEmailXpath = null;
+	public static String requiredMsgContactIssueDetailsXpath = null;
+	public static String validationMsgContactEmailXpath=null;
 	public static String contactUsHeaderTextXpath = null;
 	public static String contactUsFormCloseIconXpath = null;
 	public static String contactNameLabelClassName = null;
