@@ -1,0 +1,25 @@
+#The file allows users to list the test cases they want to run.
+#The test case entry should be made in the following format -
+#TestCaseClassName,browser,iterations
+#Example-SubmitContactUsForm,Firefox,1
+#Browser values supported - InternetExplorer,Firefox,Safari,Chrome,Opera(upto Opera version 12)
+#Testcase implemented so far -  SubmitContactUsForm,VerifyElementsOnContactUsForm,VerifyValidationOnContactForm
+#Please use the above listed browser and TestCaseClassName values only to avoid any unexpected errors during execution.
+SubmitContactUsForm,Firefox,1
+#SubmitContactUsForm,InternetExplorer,1
+#SubmitContactUsForm,safari,1
+#SubmitContactUsForm,Chrome,1
+#SubmitContactUsForm,Opera,1
+#VerifyElementsOnContactUsForm,Firefox,1
+#VerifyElementsOnContactUsForm,InternetExplorer,1
+#VerifyElementsOnContactUsForm,Safari,1
+#VerifyElementsOnContactUsForm,Chrome,1
+#VerifyElementsOnContactUsForm,Opera,1
+#VerifyValidationOnContactForm,Firefox,1
+#VerifyValidationOnContactForm,InternetExplorer,1
+#VerifyValidationOnContactForm,Opera,1
+#VerifyValidationOnContactForm,Chrome,1
+#VerifyValidationOnContactForm,Safari,1
+#SubmitContactUsForm,Firefox,5
+$VerifyElementsOnContactUsForm,Firefox,5
+$VerifyValidationOnContactForm,Firefox,5
